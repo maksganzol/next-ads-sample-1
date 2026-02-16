@@ -1,79 +1,110 @@
-import Link from "next/link"
-
-const footerLinks = [
-  {
-    title: "Компания",
-    links: [
-      { label: "О нас", href: "#" },
-      { label: "Команда", href: "#team" },
-      { label: "Карьера", href: "#" },
-    ],
-  },
-  {
-    title: "Услуги",
-    links: [
-      { label: "Разработка", href: "#services" },
-      { label: "Дизайн", href: "#services" },
-      { label: "Консалтинг", href: "#" },
-    ],
-  },
-  {
-    title: "Контакты",
-    links: [
-      { label: "Написать нам", href: "#contacts" },
-      { label: "Telegram", href: "#" },
-      { label: "LinkedIn", href: "#" },
-    ],
-  },
-]
+import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border py-12">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* About */}
           <div>
-            <Link href="/" className="text-xl font-bold tracking-tight">
-              Pulse
-            </Link>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              Создаем цифровые продукты, которые помогают бизнесу расти и развиваться
+            <h3 className="text-xl font-bold mb-4">Новости</h3>
+            <p className="text-gray-400">
+              Актуальные новости из мира политики, технологий, спорта и культуры.
+              Мы держим вас в курсе самых важных событий.
             </p>
           </div>
 
-          {footerLinks.map((group) => (
-            <div key={group.title}>
-              <h4 className="font-semibold mb-4">{group.title}</h4>
-              <ul className="space-y-3">
-                {group.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+          {/* Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Разделы</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Политика
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Технологии
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Спорт
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Культура
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Info */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Информация</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  О нас
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Контакты
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Реклама
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  Условия использования
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Мы в соцсетях</h3>
+            <div className="flex space-x-4">
+              <a
+                href="#"
+                className="p-2 bg-gray-800 hover:bg-primary rounded-full transition-colors"
+              >
+                <Facebook size={20} />
+              </a>
+              <a
+                href="#"
+                className="p-2 bg-gray-800 hover:bg-primary rounded-full transition-colors"
+              >
+                <Twitter size={20} />
+              </a>
+              <a
+                href="#"
+                className="p-2 bg-gray-800 hover:bg-primary rounded-full transition-colors"
+              >
+                <Instagram size={20} />
+              </a>
+              <a
+                href="#"
+                className="p-2 bg-gray-800 hover:bg-primary rounded-full transition-colors"
+              >
+                <Youtube size={20} />
+              </a>
             </div>
-          ))}
+          </div>
         </div>
 
-        <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            2026 Pulse. Все права защищены.
-          </p>
-          <div className="flex items-center gap-6">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Политика конфиденциальности
-            </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Условия использования
-            </Link>
-          </div>
+        {/* Copyright */}
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; 2026 Новостной портал. Все права защищены.</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

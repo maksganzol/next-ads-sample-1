@@ -1,22 +1,17 @@
-import { Header } from "@/components/header";
-import { Hero } from "@/components/hero";
-import { Services } from "@/components/services";
-import { Team } from "@/components/team";
-import { Contacts } from "@/components/contacts";
-import { Footer } from "@/components/footer";
-import NextAdsScript from "@/components/NextAdsScript";
-import TestAdZone from "@/components/TestAdZone";
+import { Header } from "@/components/Header";
+import { Hero } from "@/components/Hero";
+import { NewsGrid } from "@/components/NewsGrid";
+import { Categories } from "@/components/Categories";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main style={{ position: "relative" }}>
-        <TestAdZone />
+      <main>
         <Hero />
-        <Services />
-        <Team />
-        <Contacts />
+        <NewsGrid />
+        <Categories />
       </main>
       <Footer />
     </div>

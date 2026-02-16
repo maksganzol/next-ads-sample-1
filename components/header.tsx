@@ -1,77 +1,76 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import { useState } from "react"
-
-const navItems = [
-  { href: "#services", label: "Услуги" },
-  { href: "#team", label: "Команда" },
-  { href: "#contacts", label: "Контакты" },
-]
+import { Search, Menu } from "lucide-react";
+import { useState } from "react";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 py-4">
-        <nav className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold tracking-tight">
-            Pulse
-          </Link>
+    <header className="sticky top-0 z-50 bg-white shadow-md">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex items-center">
+            <h1 className="text-2xl font-bold text-primary">Новости</h1>
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav className="hidden md:flex items-center space-x-8">
+            <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+              Главная
+            </a>
+            <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+              Политика
+            </a>
+            <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+              Технологии
+            </a>
+            <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+              Спорт
+            </a>
+            <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+              Культура
+            </a>
+          </nav>
+
+          {/* Search and Menu Icons */}
+          <div className="flex items-center space-x-4">
+            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+              <Search size={20} className="text-gray-700" />
+            </button>
+            <button
+              className="md:hidden p-2 hover:bg-gray-100 rounded-full transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <Menu size={20} className="text-gray-700" />
+            </button>
           </div>
+        </div>
 
-          <div className="hidden md:block">
-            <Button className="rounded-full px-6">
-              Связаться
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </nav>
-
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border mt-4">
-            <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Button className="rounded-full w-full mt-2">
-                Связаться
-              </Button>
-            </div>
+          <div className="md:hidden py-4 border-t">
+            <nav className="flex flex-col space-y-4">
+              <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+                Главная
+              </a>
+              <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+                Политика
+              </a>
+              <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+                Технологии
+              </a>
+              <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+                Спорт
+              </a>
+              <a href="#" className="text-gray-700 hover:text-primary transition-colors">
+                Культура
+              </a>
+            </nav>
           </div>
         )}
       </div>
     </header>
-  )
+  );
 }
