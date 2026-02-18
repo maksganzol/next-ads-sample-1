@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import NextAdsScript from "@/components/NextAdsScript";
 
 export const metadata: Metadata = {
   title: "Новостной портал - Главные новости дня",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        {children}
+        <NextAdsScript />
+      </body>
     </html>
   );
 }

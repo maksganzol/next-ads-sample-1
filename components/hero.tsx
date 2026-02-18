@@ -42,8 +42,8 @@ export function Hero() {
 
           {/* Ad Zone */}
           <div className="lg:w-[320px] flex flex-col gap-4">
-            <AdZone width={300} height={250} className="mx-auto" />
-            <AdZone width={300} height={250} className="mx-auto" />
+            <AdZone width={300} height={250} className="mx-auto" zoneClass="next-ads-zone-1" id="ad-zone-hero-1" />
+            <AdZone width={300} height={250} className="mx-auto" zoneClass="next-ads-zone-2" id="ad-zone-hero-2" />
           </div>
         </div>
       </div>

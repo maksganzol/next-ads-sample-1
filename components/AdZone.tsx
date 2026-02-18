@@ -2,12 +2,15 @@ interface AdZoneProps {
   width: number;
   height: number;
   className?: string;
+  zoneClass?: string; // CSS class for NextAds integration
+  id?: string; // Unique ID for query selector
 }
 
-export function AdZone({ width, height, className = "" }: AdZoneProps) {
+export function AdZone({ width, height, className = "", zoneClass = "", id }: AdZoneProps) {
   return (
     <div
-      className={`flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-400 ${className}`}
+      id={id}
+      className={`flex items-center justify-center bg-gray-100 border-2 border-dashed border-gray-400 ${className} ${zoneClass}`}
       style={{ width: `${width}px`, height: `${height}px` }}
     >
       <span className="text-gray-500 text-sm font-medium">

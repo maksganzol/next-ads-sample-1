@@ -15,7 +15,7 @@ export function NewsGrid() {
 
           {/* Ad Zone after 3rd card */}
           <div className="flex items-center justify-center">
-            <AdZone width={300} height={250} />
+            <AdZone width={300} height={250} zoneClass="next-ads-zone-3" id="ad-zone-grid-1" />
           </div>
 
           {newsList.slice(3, 6).map((news) => (
@@ -24,7 +24,7 @@ export function NewsGrid() {
 
           {/* Leaderboard Ad */}
           <div className="md:col-span-2 lg:col-span-3 flex justify-center my-4">
-            <AdZone width={728} height={90} />
+            <AdZone width={728} height={90} zoneClass="next-ads-zone-4" id="ad-zone-leaderboard" />
           </div>
 
           {newsList.slice(6).map((news) => (
