@@ -17,7 +17,7 @@ Before testing, ensure the following are set up in the NextAds admin panel:
 1. Open the file: [components/NextAdsScript.tsx](components/NextAdsScript.tsx)
 2. Update the script URL with your Website ID from the admin panel:
    ```typescript
-   <Script src="https://api-dev.next-ads-server-dev.com/script/tag.js?websiteId=YOUR_WEBSITE_ID" strategy="afterInteractive" />
+   <Script src="https://api-dev.next-ads-server-dev.com/script/tag.js?websiteId=6" strategy="afterInteractive" />
    ```
    Replace `YOUR_WEBSITE_ID` with the actual ID from NextAds admin panel.
 
