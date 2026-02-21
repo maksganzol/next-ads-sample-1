@@ -1,9 +1,8 @@
-import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
+import { Header } from "@/components/header";
+import { Hero } from "@/components/hero";
 import { NewsGrid } from "@/components/NewsGrid";
-import { Categories } from "@/components/Categories";
-import { Footer } from "@/components/Footer";
-
+//
+//
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -11,9 +10,7 @@ export default function Home() {
       <main>
         <Hero />
         <NewsGrid />
-        <Categories />
       </main>
-      <Footer />
     </div>
   );
 }
